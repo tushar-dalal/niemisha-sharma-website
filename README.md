@@ -39,7 +39,7 @@ Then open http://localhost:8080.
 
 1. Push this repo to GitHub.
 2. In the repo: **Settings → Pages → Build and deployment**, set Source to *Deploy from a branch*, branch `main`, folder `/ (root)`.
-3. Add a file named `CNAME` containing just the domain (e.g. `niemishasharma.com`).
+3. Add a file named `CNAME` containing just the domain (`niemisha.com`).
 4. At the domain registrar, point the domain at GitHub Pages (A records for the root domain, a CNAME record for `www`).
 5. Back in **Settings → Pages**, tick **Enforce HTTPS** once the certificate is ready.
 
