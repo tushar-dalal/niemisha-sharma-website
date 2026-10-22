@@ -245,6 +245,10 @@ figcaption b { color: var(--ink); font-weight: 600; }
 .foot-grid ul a { display: inline-block; padding: 6px 0; }
 .foot-grid .meta, .foot-small { color: #b3a99b; }
 .foot-small { font-size: 14px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid #4a443d; padding-top: 22px; }
+.powered { display: flex; justify-content: center; margin-top: 28px; }
+.powered a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 6px; font-size: 13px; color: #b3a99b; opacity: .85; transition: opacity var(--t); }
+.powered a:hover { opacity: 1; color: #b3a99b; }
+.powered img { height: 25px; width: auto; }
 
 /* ---------- reveal (subtle; content never depends on it) ---------- */
 .js .reveal { opacity: 0; transform: translateY(10px); transition: opacity 300ms ease, transform 300ms ease; }

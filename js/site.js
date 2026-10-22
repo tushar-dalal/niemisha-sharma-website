@@ -49,6 +49,8 @@
         <ul><li>${cvLink}</li>${S.socials.map((s) => `<li><a href="${esc(s.url)}" rel="noopener">${esc(s.label)}</a></li>`).join("")}</ul>
       </div>
       <div class="foot-small"><span>© ${new Date().getFullYear()} ${esc(S.name)}. Images © the artist unless credited otherwise.</span><span>This site uses no tracking or cookies.</span></div>
+      <div class="powered"><a href="https://devindi.in" target="_blank" rel="noopener" aria-label="Powered by devIndi (opens devindi.in in a new tab)">
+        <span>Powered by</span><img src="assets/devindi-wordmark-light.png" alt="devIndi" width="93" height="25"></a></div>
     </div></footer>`;
 
   const btn = $(".menu-btn"), nav = $("#nav");
