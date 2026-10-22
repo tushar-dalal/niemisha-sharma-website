@@ -549,7 +549,14 @@
           <div class="fields two"><label>Name<input data-f="name"></label><label>Shown under the name<input data-f="descriptor" placeholder="Artist &amp; Curator"></label></div>
           <label>Home page headline <span class="hint">The phrase between the first two commas is set in italics.</span><input data-f="tagline"></label>
           <label>Years of work <span class="hint">optional, e.g. 2019–present</span><input data-f="years"></label></div></div>
-        <div class="card"><h2>Home page image</h2><p class="hint" style="margin-top:-6px">A real artwork or installation view.</p>${imgField(d, "heroImage", "Choose the home page image")}</div>
+        <div class="card"><h2>Home page images</h2>
+          <h3 style="margin-top:4px">Main image</h3><p class="hint" style="margin:-6px 0 12px">The large image at the top. A real artwork or installation view.</p>${imgField(d, "heroImage", "Choose the main image")}
+          <h3 style="margin-top:22px">The other images on the home page</h3>
+          <ul class="rows noimg" style="margin-top:8px">
+            <li><div><b>Selected practice</b><div class="sub">The cover (first image) of the first four artworks. Change an artwork's images, or reorder artworks to choose which four appear.</div></div><div class="ops"><a class="btn sm line" href="#/artworks">Artworks</a></div></li>
+            <li><div><b>Curatorial work</b><div class="sub">The cover of the first three exhibitions, in the order set under Curating.</div></div><div class="ops"><a class="btn sm line" href="#/curating">Curating</a></div></li>
+            <li><div><b>About</b><div class="sub">The portrait or studio image from the About page.</div></div><div class="ops"><a class="btn sm line" href="#/about">About &amp; CV</a></div></li>
+          </ul></div>
         <div class="card"><h2>Page introductions</h2><div class="fields">
           <label>Practice page<textarea data-f="intros.practice" rows="4"></textarea></label>
           <label>Curating page<textarea data-f="intros.curating" rows="4"></textarea></label>

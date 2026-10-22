@@ -13,7 +13,7 @@ window.SITE = {
   descriptor: "Artist & Curator",
   tagline: "Artistic practice, curatorial inquiry, and visual research.",
   years: "",                       // e.g. "2019–present" once confirmed (brief §06); empty hides it
-  email: "hello@example.com",      // TODO: professional email
+  email: "niemisha@niemisha.com",
   cv: "",                          // e.g. "cv/Niemisha_Sharma_CV.pdf"; empty shows "CV coming soon"
   cvUpdated: "",                   // e.g. "October 2026"
   socials: [                       // professional profiles only; empty list hides them
