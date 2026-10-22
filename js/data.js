@@ -21,6 +21,11 @@ window.SITE = {
   ],
   heroImage: { src: "", alt: "", caption: "Hero image: a real artwork or installation view, to be selected" },
   invite: "For exhibitions, research, writing or collaboration, I'd be glad to hear from you.",
+  intros: {
+    practice: "An introductory statement of about 80–160 words goes here, written once the work is selected. It should describe current concerns in plain terms rather than claim a fixed, finished practice.",
+    curating: "A short introduction to the curatorial approach goes here: the kinds of artists, spaces and questions these projects bring together. Each project below states its role and collaborators plainly.",
+    writing: "Essays, catalogue texts, talks and research notes. Working notes are marked as such, so they aren't mistaken for published work.",
+  },
 };
 
 // Artistic Practice — 3–5 projects or series at launch (brief §11).

@@ -43,6 +43,39 @@ Then open http://localhost:8080.
 4. At the domain registrar, point the domain at GitHub Pages (A records for the root domain, a CNAME record for `www`).
 5. Back in **Settings → Pages**, tick **Enforce HTTPS** once the certificate is ready.
 
+## Admin (site editor)
+
+`/admin/` is a sign-in page for the site owner. Once signed in, she can write journal entries with
+images placed anywhere in the text, add and edit artworks, create and reorder gallery sections, edit
+exhibitions, change the home page, page introductions, About page and CV, and manage uploaded images.
+
+Content, images and the login live in **Supabase** (project set in `js/config.js`). The public site reads
+published content from there; until the database is set up it keeps showing the starter content in `js/data.js`.
+
+### One-time Supabase setup
+
+1. **SQL Editor → New query**: paste all of `supabase/setup.sql` and click **Run**.
+2. **Authentication → Users → Add user → Create new user**: enter the owner's email and a password, and tick
+   **Auto Confirm User**.
+3. Back in the **SQL Editor**, give that account editing rights (use the same email):
+   ```sql
+   insert into public.admins (user_id)
+   select id from auth.users where email = 'niemisha@niemisha.com'
+   on conflict do nothing;
+   ```
+4. **Authentication → Sign In / Providers → Email**: turn off **Allow new users to sign up**.
+   (Even with sign-ups on, only accounts in `public.admins` can edit.)
+5. **Authentication → URL Configuration**: set **Site URL** to `https://niemisha.com` and add
+   `https://niemisha.com/admin/index.html` under **Redirect URLs**, so "Forgot your password?" emails work.
+6. Open `https://niemisha.com/admin/`, sign in, and choose **Import the current site** (or **Start empty**).
+
+To add another editor later, repeat steps 2 and 3 with their email.
+
+### Trying it locally without Supabase
+
+Empty both values in `js/config.js` and serve the folder on `localhost`: the admin runs in **preview mode**,
+accepting any sign-in and saving only to that browser.
+
 ## Before launch (brief §14)
 
 - Replace every placeholder record, the email, and the intro paragraphs; add images under `images/`.

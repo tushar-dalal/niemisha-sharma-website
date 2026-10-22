@@ -290,3 +290,43 @@ figcaption b { color: var(--ink); font-weight: 600; }
   .foot-grid { grid-template-columns: 1fr; }
   .cv-list li { grid-template-columns: 1fr; gap: 2px; }
 }
+
+/* ---------- gallery sections (Practice) ---------- */
+.work-section + .work-section { margin-top: var(--gap); padding-top: var(--gap); border-top: 1px solid var(--rule); }
+
+/* ---------- journal entry: centred reading column so images can break out ---------- */
+.entry { max-width: 44rem; margin: 0 auto; }
+.entry .prose { max-width: none; }
+.entry-cover { margin-bottom: clamp(32px, 4vw, 56px); }
+
+/* ---------- editor blocks ---------- */
+.blocks { display: flow-root; }
+.blocks > * + * { margin-top: 1.15em; }
+.blocks p { margin: 0; }
+.blocks .b-head { margin-top: 1.6em; }
+.blocks .b-head + * { margin-top: .7em; }
+.blocks figure { margin: 1.8em 0; }
+.blocks figure img { width: 100%; height: auto; }
+.blocks figcaption { margin-top: 10px; }
+.b-img.size-left, .b-img.size-right { width: 46%; margin-top: .35em; margin-bottom: 1em; }
+.b-img.size-left { float: left; margin-right: 1.6em; }
+.b-img.size-right { float: right; margin-left: 1.6em; }
+/* wide and full break out of the reading column, centred on it */
+.b-img.size-wide, .b-img.size-full { position: relative; left: 50%; transform: translateX(-50%); max-width: none; }
+.b-img.size-wide { width: min(62rem, calc(100vw - 2 * var(--gutter))); }
+.b-img.size-full { width: calc(min(var(--max), 100vw) - 2 * var(--gutter)); }
+/* inside the narrower side-by-side layouts, keep every image within its column */
+.reading .b-img.size-wide, .reading .b-img.size-full { left: auto; transform: none; width: 100%; }
+.b-gallery { display: grid; gap: clamp(10px, 1.5vw, 18px); margin: 1.8em 0; clear: both; }
+.b-gallery.cols-2 { grid-template-columns: 1fr 1fr; }
+.b-gallery.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.b-gallery figure { margin: 0; }
+.b-gallery img { aspect-ratio: 4 / 5; object-fit: cover; }
+.b-quote { margin: 2em 0; padding-left: 1.2em; border-left: 2px solid var(--rust); clear: both; }
+.b-quote p { font-family: var(--serif); font-size: 1.35em; line-height: 1.35; }
+.b-quote cite { display: block; margin-top: 10px; font-style: normal; font-size: 14px; color: var(--muted); }
+.b-rule { border: 0; border-top: 1px solid var(--rule); margin: 2.4em 0; clear: both; }
+@media (max-width: 640px) {
+  .b-img.size-left, .b-img.size-right { float: none; width: 100%; margin: 1.8em 0; }
+  .b-gallery.cols-3 { grid-template-columns: 1fr 1fr; }
+}
